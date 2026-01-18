@@ -1,2 +1,2 @@
-github: user
-open_collective: user
+github: moonshine-software
+open_collective: moonshine

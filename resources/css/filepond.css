@@ -1,0 +1,271 @@
+@import 'filepond/dist/filepond.min.css';
+@import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+@import 'filepond-plugin-file-poster/dist/filepond-plugin-file-poster.css';
+
+/* Filepond MoonShine Theme */
+
+.filepond--root {
+    --filepond-border-color: 1px solid var(--color-base-stroke);
+    --filepond-item-width: 200px;
+    --filepond-bg-color: var(--color-base);
+    --filepond-text-color: var(--color-base-text);
+    --filepond-label-color: var(--color-base-text);
+    --filepond-icon-color: var(--color-primary);
+    --filepond-file-info-color: var(--color-secondary);
+    --filepond-panel-bg: var(--color-base-100);
+    --filepond-item-panel-bg: var(--color-base-200);
+    --filepond-drop-bg: var(--color-base-50);
+    --filepond-drop-bg-hover: var(--color-base-100);
+    --filepond-button-bg: var(--color-base-300);
+    --filepond-button-bg-hover: var(--color-base-400);
+    --filepond-error-color: var(--color-error);
+    --filepond-success-color: var(--color-success);
+    --filepond-warning-color: var(--color-warning);
+
+    font-family: inherit;
+}
+
+/* Panel root */
+.filepond--panel-root {
+    border-radius: var(--radius-lg);
+    background-color: var(--filepond-panel-bg);
+    border: 1px solid var(--filepond-border-color);
+}
+
+/* Drop area */
+.filepond--drop-label {
+    color: var(--filepond-label-color);
+    font-size: var(--text-sm);
+    min-height: 4rem;
+}
+
+.filepond--drop-label label {
+    color: var(--filepond-label-color);
+    cursor: pointer;
+}
+
+.filepond--drop-label.filepond--drop-label label {
+    color: var(--filepond-label-color);
+}
+
+/* Label action (browse link) */
+.filepond--label-action {
+    color: var(--color-primary);
+    text-decoration: none;
+    text-decoration-style: solid;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.filepond--label-action:hover {
+    text-decoration-style: solid;
+}
+
+/* File item */
+.filepond--item {
+    margin-top: 0.5rem;
+}
+
+.filepond--item-panel {
+    border-radius: var(--radius-lg);
+    background-color: var(--filepond-item-panel-bg);
+}
+
+/* File info */
+.filepond--file-info {
+    color: var(--filepond-file-info-color);
+}
+
+.filepond--file-info .filepond--file-info-main {
+    font-size: var(--text-sm);
+    color: var(--filepond-file-info-color);
+}
+
+.filepond--file-info .filepond--file-info-sub {
+    font-size: var(--text-xs);
+    color: var(--filepond-file-info-color);
+    opacity: 0.7;
+}
+
+/* File status */
+.filepond--file-status {
+    color: var(--filepond-text-color);
+}
+
+.filepond--file-status .filepond--file-status-main {
+    font-size: var(--text-sm);
+    color: var(--filepond-text-color);
+}
+
+.filepond--file-status .filepond--file-status-sub {
+    font-size: var(--text-xs);
+    color: var(--filepond-text-color);
+    opacity: 0.7;
+}
+
+/* Action buttons */
+.filepond--file-action-button {
+    color: var(--filepond-text-color);
+    background-color: var(--filepond-button-bg);
+    cursor: pointer;
+}
+
+.filepond--file-action-button:hover,
+.filepond--file-action-button:focus {
+    background-color: var(--filepond-button-bg-hover);
+    box-shadow: 0 0 0 0.125em --alpha(var(--color-primary) / 0.2);
+}
+
+/* Remove button */
+.filepond--action-remove-item {
+    color: var(--filepond-text-color);
+}
+
+.filepond--action-remove-item:hover {
+    color: var(--filepond-error-color);
+}
+
+/* Progress indicator */
+.filepond--progress-indicator {
+    color: var(--color-primary);
+}
+
+.filepond--progress-indicator svg {
+    color: var(--color-primary);
+}
+
+/* Load indicator */
+.filepond--load-indicator {
+    color: var(--color-primary);
+}
+
+/* Processing complete indicator */
+.filepond--processing-complete-indicator {
+    color: var(--filepond-success-color);
+}
+
+/* Error states */
+[data-filepond-item-state='processing-error'] .filepond--item-panel,
+[data-filepond-item-state='load-invalid'] .filepond--item-panel,
+[data-filepond-item-state*='error'] .filepond--item-panel,
+[data-filepond-item-state*='invalid'] .filepond--item-panel {
+    background-color: --alpha(var(--filepond-error-color) / 0.15);
+}
+
+[data-filepond-item-state='processing-error'] .filepond--file-info,
+[data-filepond-item-state='processing-error'] .filepond--file-status,
+[data-filepond-item-state='load-invalid'] .filepond--file-info,
+[data-filepond-item-state='load-invalid'] .filepond--file-status,
+[data-filepond-item-state*='error'] .filepond--file-info,
+[data-filepond-item-state*='error'] .filepond--file-status,
+[data-filepond-item-state*='invalid'] .filepond--file-info,
+[data-filepond-item-state*='invalid'] .filepond--file-status {
+    color: var(--color-error-text);
+}
+
+/* Success states */
+[data-filepond-item-state='processing-complete'] .filepond--item-panel {
+    background-color: --alpha(var(--filepond-success-color) / 0.15);
+}
+
+[data-filepond-item-state='processing-complete'] .filepond--file-info,
+[data-filepond-item-state='processing-complete'] .filepond--file-status {
+    color: var(--color-success-text);
+}
+
+/* Image preview plugin */
+.filepond--image-preview-overlay-idle {
+    color: --alpha(var(--color-base-text) / 0.4);
+}
+
+.filepond--image-preview-overlay-success {
+    color: --alpha(var(--filepond-success-color) / 0.4);
+}
+
+.filepond--image-preview-overlay-failure {
+    color: --alpha(var(--filepond-error-color) / 0.4);
+}
+
+.filepond--image-preview-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* Drag over state */
+.filepond--root[data-style-panel-layout~='circle'] .filepond--panel-root {
+    border-radius: 50%;
+}
+
+/* Focus state */
+.filepond--root.filepond--hopper .filepond--panel-root {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem --alpha(var(--color-primary) / 0.1);
+}
+
+/* Browse button wrapper */
+.filepond--browser {
+    color: var(--filepond-text-color);
+}
+
+/* Credits (hide if needed) */
+.filepond--credits {
+    display: none;
+}
+
+/* Drip effect */
+.filepond--drip-blob {
+    background-color: var(--color-primary);
+    opacity: 0.1;
+}
+
+/* List styling */
+.filepond--list-scroller {
+    margin-top: 0.5rem;
+}
+
+/* Wrapper */
+.filepond--wrapper {
+    border-radius: var(--radius-lg);
+}
+
+/* Idle state panel */
+[data-filepond-item-state='idle'] .filepond--item-panel {
+    background-color: var(--filepond-item-panel-bg);
+}
+
+/* Processing state */
+[data-filepond-item-state*='processing'] .filepond--item-panel,
+[data-filepond-item-state*='uploading'] .filepond--item-panel,
+[data-filepond-item-state='busy'] .filepond--item-panel {
+    background-color: var(--filepond-item-panel-bg);
+}
+
+/* Limbo state (server file) */
+[data-filepond-item-state='limbo'] .filepond--item-panel {
+    background-color: --alpha(var(--filepond-success-color) / 0.1);
+}
+
+/* Grid layout for multiple files */
+.filepond--grid .filepond--list-scroller {
+    overflow: visible;
+    margin-block: 0;
+}
+
+.filepond--grid .filepond--list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.5rem;
+}
+
+.filepond--grid .filepond--item {
+    width: var(--filepond-item-width, 10px);
+    height: var(--filepond-item-width, 100px);
+    flex-shrink: 0;
+}
+
+/* File poster wrapper styling */
+.filepond--file-poster-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
