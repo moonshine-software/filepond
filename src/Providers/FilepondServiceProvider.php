@@ -32,8 +32,8 @@ final class FilepondServiceProvider extends ServiceProvider
             Route::prefix('filepond')
                 ->name('filepond.')
                 ->group(function () {
-                    Route::post('/upload', [FilepondController::class, 'upload'])->name('upload');
+                    Route::post('/upload/{resourceUri?}', [FilepondController::class, 'upload'])->name('upload');
                 });
-        }, withResource: true, withPage: true, withAuthenticate: true);
+        }, withPage: true, withAuthenticate: true);
     }
 }

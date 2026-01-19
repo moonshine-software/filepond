@@ -1,3 +1,4 @@
+import '../css/filepond.css';
 import { create, registerPlugin } from 'filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';

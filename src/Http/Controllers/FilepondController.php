@@ -17,14 +17,10 @@ class FilepondController extends Controller
     {
         $page = $request->getPage();
 
-        if(!$page instanceof CrudPageContract) {
-            abort(Response::HTTP_BAD_REQUEST, 'Crud page field not found');
-        }
-
         /** @var ?Filepond $field */
-        $field = $page->getFields()->onlyFields()->findByColumn($request->input('_field'));
+        $field = $page->getComponents()->onlyFields()->findByColumn($request->input('_field'));
 
-        if($field === null) {
+        if ($field === null) {
             abort(Response::HTTP_BAD_REQUEST, 'Filepond field not found');
         }
 
@@ -36,7 +32,7 @@ class FilepondController extends Controller
         $field = $this->getField($request);
         $file = $request->file('filepond');
 
-        if (!$file) {
+        if (! $file) {
             abort(Response::HTTP_BAD_REQUEST, 'No file uploaded');
         }
 

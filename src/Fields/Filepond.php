@@ -217,11 +217,11 @@ class Filepond extends Field
         $attributes = [
             'data-server' => $this
                 ->getCore()->getRouter()
-                ->withPage($page)
-                ->withResource($resource)
-                ->withResourceItem($item)
                 ->to('filepond.upload', [
                     '_field' => $this->getColumn(),
+                    'pageUri' => $page->getUriKey(),
+                    'resourceUri' => $resource?->getUriKey(),
+                    'resourceItem' => $item,
                 ]),
             'data-extensions' => $this->getAcceptExtension(),
             'data-labels' => json_encode(__('moonshine-filepond::filepond'), JSON_THROW_ON_ERROR),
