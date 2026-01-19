@@ -21,7 +21,7 @@
     --filepond-error-color: var(--color-error);
     --filepond-success-color: var(--color-success);
     --filepond-warning-color: var(--color-warning);
-
+    --filepond-container-padding-bottom: calc(var(--spacing) * 5);
     font-family: inherit;
 }
 
@@ -268,4 +268,8 @@
 .filepond--file-poster-wrapper {
     border-radius: var(--radius-lg);
     overflow: hidden;
+}
+
+.filepond--root.filepond--hopper:has(.filepond--list:not(:empty)) .filepond--panel-root {
+    padding-block-end: var(--filepond-container-padding-bottom);
 }
