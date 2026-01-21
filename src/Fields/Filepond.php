@@ -35,8 +35,6 @@ class Filepond extends Field
 
     protected bool $isCompact = false;
 
-    protected ?int $itemWidth = null;
-
     protected int $itemHeight = 100;
 
     protected int $itemMinHeight = 44;
@@ -78,16 +76,6 @@ class Filepond extends Field
     public function compact(): static
     {
         $this->isCompact = true;
-
-        return $this;
-    }
-
-    /**
-     * Set item width for multiple files (enables grid layout)
-     */
-    public function itemWidth(int $width): static
-    {
-        $this->itemWidth = $width;
 
         return $this;
     }
@@ -231,7 +219,6 @@ class Filepond extends Field
             'data-poster-height' => $this->itemHeight,
             'data-panel-aspect-ratio' => $this->panelAspectRatio,
             'data-compact' => $this->isCompact ? 'true' : null,
-            'data-item-width' => $this->itemWidth,
             'data-allow-remove' => $this->isRemovable() ? 'true' : 'false',
             'data-allow-reorder' => 'true',
             'data-allow-revert' => 'false',

@@ -104,14 +104,6 @@ Filepond::make('Image')
 
 ### Grid Layout
 
-For multiple files, configure the grid item width:
-
-```php
-Filepond::make('Gallery')
-    ->multiple()
-    ->itemWidth(200); // each item will be 200px wide
-```
-
 To disable grid layout and stack items vertically:
 
 ```php
@@ -159,7 +151,6 @@ public function fields(): array
             ->disk('public')
             ->dir('gallery')
             ->multiple()
-            ->itemWidth(180)
             ->itemHeight(180, 100, 200)
             ->acceptExtensions('jpg', 'jpeg', 'png', 'gif', 'webp'),
 

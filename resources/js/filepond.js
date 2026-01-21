@@ -142,11 +142,6 @@ document.addEventListener('alpine:init', () => {
             // Apply grid layout for multiple files
             if (this.multiple && dataset.grid === 'true') {
                 this.pond.element.classList.add('filepond--grid');
-
-                // Set item width via CSS variable on wrapper for inheritance
-                if (dataset.itemWidth) {
-                    this.$el.style.setProperty('--filepond-item-width', `${dataset.itemWidth}px`);
-                }
             }
 
             // Find parent form and block submit during upload

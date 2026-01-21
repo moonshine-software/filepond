@@ -6,7 +6,6 @@
 
 .filepond--root {
     --filepond-border-color: 1px solid var(--color-base-stroke);
-    --filepond-item-width: 200px;
     --filepond-bg-color: var(--color-base);
     --filepond-text-color: var(--color-base-text);
     --filepond-label-color: var(--color-base-text);
@@ -259,8 +258,6 @@
 }
 
 .filepond--grid .filepond--item {
-    width: var(--filepond-item-width, 10px);
-    height: var(--filepond-item-width, 100px);
     flex-shrink: 0;
 }
 
